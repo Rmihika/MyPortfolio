@@ -8,20 +8,25 @@
   <link rel="stylesheet" href="mediaqueries.css"/>
 </head>
 <body>
+  
   <nav id="desktop-nav">
     <div class="logo">Mihika Raut</div>
     <div>
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#about">About</a></li> <li><a href="#arsenal">Arsenal</a></li>
+        <li><a href="#journey">Journey</a></li>
+        <li><a href="#creations">Creations</a></li>
+        <li><a href="#contact">Connect</a></li>
+        <li class="theme-btn-container" onclick="toggleTheme()">
+            <img id="theme-icon" src="./assets/night-mode.png" alt="Theme Toggle" class="icon theme-icon"/>
+        </li>
       </ul>
     </div>
   </nav>
 
   <nav id="hamburger-nav">
-    <div class="logo">John Doe</div>
+    <div class="logo">Mihika Raut</div>
     <div class="hamburger-menu">
       <div class="hamburger-icon" onclick="toggleMenu()">
         <span></span>
@@ -29,349 +34,324 @@
         <span></span>
       </div>
       <div class="menu-links">
+        <li><a href="#profile" onclick="toggleMenu()">Profile</a></li>
         <li><a href="#about" onclick="toggleMenu()">About</a></li>
-        <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        <li><a href="#arsenal" onclick="toggleMenu()">Arsenal</a></li>
+        <li><a href="#journey" onclick="toggleMenu()">Journey</a></li>
+        <li><a href="#creations" onclick="toggleMenu()">Creations</a></li>
+        <li><a href="#contact" onclick="toggleMenu()">Connect</a></li>
+        <li onclick="toggleTheme()">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 10px; cursor: pointer;">
+                <span>Switch Theme</span>
+                <img id="theme-icon-mobile" src="./assets/night-mode.png" alt="Theme Toggle" class="icon theme-icon"/>
+            </div>
+        </li>
       </div>
     </div>
   </nav>
+
   <section id="profile">
     <div class="section__pic-container">
-      <img src="./assets/profile-pic.png" alt="Mihika Raut profile picture"/>
+      <img src="./assets/profile-picture.png" alt="Mihika Raut profile picture"/>
     </div>
     <div class="section__text">
       <p class="section__text__p1">Hello I'm</p>
-      <h1 class="title">Mihika Raut</h1>
-      <p class="section__text__p2">Frotnend Developer</p>
+      <h1 class="title"><span class="typing-name"></span></h1>
+      <p class="section__text__p2">Computer Engineering @ Vidyalankar Polytechnic</p>
+      <p class="section__text__interests">
+         &nbsp; &#9830;Web Dev &nbsp; &#9830; AI/ML &nbsp; &#9830; Automation
+      </p>
+
       <div class="btn-container">
-        <button class="btn btn-color-2" onclick="window.open('./assets/resume-example.pdf')">
+        <button class="btn btn-color-2" onclick="window.open('./assets/RESUME.pdf')">
           Download CV
         </button>
-
-        <button class="btn btn-color-1" onclick="location.href='.#contact'">
-          Contact Info
+        <button class="btn btn-color-1" onclick="location.href='#contact'">
+          Let's Talk
         </button>
-        
       </div>
+      
       <div id="socials-container">
-        <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon" onclick="location.href='https://www.linkedin.com/in/mihika-raut-b9a211315/?lipi=urn%3Ali%3Apage%3Ad_flagship3_detail_base%3Bx3aw6L7RTH64jg6ZgttHyA%3D%3D'"/>
-        <img src="./assets/github.png" alt="My Github profile" class="icon" onclick="location.href='https://github.com/Rmihika/Rmihika'"/>
+        <img src="./assets/linkediin.png" alt="My LinkedIn profile" class="icon social-icon" onclick="location.href='https://www.linkedin.com/in/mihika-raut-b9a211315/'"/>
+        <img src="./assets/github.png" alt="My Github profile" class="icon social-icon" onclick="location.href='https://github.com/Rmihika/Rmihika'"/>
       </div>
     </div>
   </section>
 
-  <section id="about">
-  <p class="section__text__p1">Get to know more</p>
-  <h1 class="title">About Me</h1>
-
-  <div class="section-container">
-    <div class="section__pic-container">
-      <img
-        src="./assets/about-pic.png"
-        alt="Profile picture"
-        class="about-pic"
-      />
-    </div>
-
-    <div class="about-details-container">
-      <div class="about-containers">
-        <div class="details-container">
-          <img
-            src="./assets/experience.png"
-            alt="Experience icon"
-            class="icon"
-          />
-          <h3>Experience</h3>
-          <p>2 years <br>Full-Stack Developement</p>
-        </div>
-        <div class="details-container">
-          <img
-            src="./assets/education.png"
-            alt="Education icon"
-            class="icon"
-          />
-          <h3>Education</h3>
-          <p>Diploma Computer Engineering </p>
-        </div>
-      </div>
-      <div class="text-container">
-        <p>I'm a passionate and highly motivated beginner
-           engineering student actively exploring the intersection
-           of Web Development, Artificial Intelligence/Machine Learning,
-           and Cloud Computing. I believe in learning by building,
-           contributing to open-source, and understanding the architecture 
-           that powers real-world applications.
+  <section id="about" class="reveal">
+    <p class="section__text__p1">Who Am I?</p>
+    <h1 class="title">About Me</h1>
+    
+    <div class="about-container glass-card">
+      <div class="about-text">
+        <p>
+          Yo, I'm Mihika! ✌️ Just a tech enthusiast bridging the gap between lines of code and the physical world. 
+          Currently smashing my Diploma in Computer Engineering, but honestly? I'm obsessed with making smart stuff—think AI, robotics, and automation. 🤖
+        </p>
+        <p>
+          I’m not just about pixels on a screen; I wanna make hardware <i>think</i>. Whether it's crafting slick web apps with the MERN stack or tinkering with sensors and ROS, I'm all about building cool things that actually solve problems.
+        </p>
+        <p>
+          Future plans? Merging ML with hardware in my upcoming B.Tech. If it's tech, innovative, and slightly chaotic, I'm so there. 🚀
         </p>
       </div>
+      
     </div>
-  </div>
-  <img src="./assets/arrow.png"
-       alt="Arror-icon" 
-       class="icon arrow" 
-       onclick="location.href='./#experience'"
-  />
-</section>
+    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#arsenal'"/>
+  </section>
 
- <section id="experience">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Experience</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="experience-sub-title">Frontend Development</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>HTML</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>CSS</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>ReactJS</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>JavaScript</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>TypeScript</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Material UI</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-            </div>
-          </div>
-          <div class="details-container">
-            <h2 class="experience-sub-title">Backend Development</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>PostgreSQL</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Node JS</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Express JS</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Git</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-            </div>
-          </div>
+  <!--<section id="domain" class="reveal">
+    <p class="section__text__p1">What I Do</p>
+    <h1 class="title">My Domain</h1>
+    
+    <div class="domain-container glass-card">
+      <div class="domain-item">
+        <h3>🌐 Web Development</h3>
+        <p>Building responsive, pixel-perfect web apps with modern stacks like MERN.</p>
+      </div>
+      <div class="domain-divider"></div>
+      <div class="domain-item">
+        <h3>🤖 IoT & Robotics</h3>
+        <p>Bridging code with the physical world using Arduino, Sensors, and ROS.</p>
+      </div>
+      <div class="domain-divider"></div>
+      <div class="domain-item">
+        <h3>🧠 AI Integration</h3>
+        <p>Making systems smarter by fusing Machine Learning with real-world hardware.</p>
+      </div>
+    </div>
+    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#arsenal'"/>
+  </section>-->
+ 
+  <section id="arsenal" class="reveal">
+    <p class="section__text__p1">My Toolkit</p>
+    <h1 class="title">Technical Arsenal</h1>
+    
+    <div class="arsenal-grid">
+      
+      <div class="arsenal-card glass-card">
+        <h3>Core Languages</h3>
+        <div class="skill-tags">
+          <span>Java</span> <span>Python</span> <span>C / C++</span> <span>JavaScript</span> <span>SQL (MySQL)</span>
         </div>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#projects'"
-      />
-    </section>
 
-  <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-1.png"
-                alt="Project 1"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Weather-App</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-2.png"
-                alt="Project 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Crypto-Place</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-3.png"
-                alt="Project 3"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">AuraTrack</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
+      <div class="arsenal-card glass-card">
+        <h3>Development & Tools</h3>
+        <div class="skill-tags">
+          <span>React.js</span> <span>Node.js</span> <span>Express</span> <span>MongoDB</span> <span>Flutter</span> <span>Git/GitHub</span>
         </div>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
-    </section>
 
-    <section id="contact">
-      <p class="section__text__p1">Get In Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img 
-          src="./assets/email.png" 
-          alt="Email icon" 
-          class="icon contact-icon email-icon"
-          />
-          <p> <a href="mailto:exampleemail@gmail.com">Email</a></p>
-        </div>
-
-        <div class="contact-info-container">
-          <img 
-          src="./assets/linkedin.png" 
-          alt="linkedIin icon" 
-          class="icon contact-icon"
-          />
-          <p> <a href="https://www.linkedin.com/in/mihika-raut-b9a211315/?lipi=urn%3Ali%3Apage%3Ad_flagship3_detail_base%3Bx3aw6L7RTH64jg6ZgttHyA%3D%3D">LinkedIn</a></p>
+      <div class="arsenal-card glass-card">
+        <h3>Learning & Goals</h3>
+        <div class="skill-tags future-tags">
+          <span>Docker</span> <span>Kubernetes</span> <span>ROS</span> <span>Physical ML</span> <span>Arduino</span> <span>Automation</span>
         </div>
       </div>
-    </section>
 
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-           <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+    </div>
+    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#journey'"/>
+  </section>
+
+  <section id="journey" class="reveal">
+    <p class="section__text__p1">My Path</p>
+    <h1 class="title">The Journey</h1>
+
+    <div class="timeline">
+      
+      <div class="timeline-item left">
+        <div class="timeline-content glass-card">
+          <div class="date">Sept 2026 (Upcoming)</div>
+          <h3>B.Tech Lateral Entry</h3>
+          <h4>Electronics & Telecommunication</h4>
+          <p>Upcoming admission into 2nd year of Engineering degree. Focusing on bridging software with hardware systems.</p>
         </div>
-      </nav>
-      <p>Copyright &#169; 2026 Mihika Raut. All Rights Reserved.</p>
-    </footer>
+      </div>
+
+      <div class="timeline-item right">
+        <div class="timeline-content glass-card">
+          <div class="date">June 2025 - Aug 2025</div>
+          <h3>Web Development Internship</h3>
+          <h4>College Project Team</h4>
+          <p>Collaborated in a team of 8 under professor supervision. Gained practical experience in full-stack integration and team workflows.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item left">
+        <div class="timeline-content glass-card">
+          <div class="date">2024 - 2026</div>
+          <h3>Diploma in Computer Engineering</h3>
+          <h4>Vidyalankar Polytechnic</h4>
+          <p>Currently pursuing. 2025 was a breakthrough year for mastering Web Development and exploring App Dev.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item right">
+        <div class="timeline-content glass-card">
+          <div class="date">2022 - 2024</div>
+          <h3>10+2 in Science</h3>
+          <h4>Sophia College for Women</h4>
+          <p>Completed my junior college with science stream with PCMB as core subjects</p>
+        </div>
+      </div>
+
+    </div>
+    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#creations'"/>
+  </section>
+
+  <section id="creations" class="reveal">
+    <p class="section__text__p1">My Portfolio</p>
+    <h1 class="title">Creations</h1>
+    
+    <div class="projects-grid">
+      
+      <div class="project-card glass-card">
+        <div class="project-header">
+          <h2>AuraTrack</h2>
+          <span class="year">2025</span>
+        </div>
+        <div class="status-badge completed">💻On going</div>
+        <p class="project-desc">
+          Smart QR-based attendance system. Faculty generates QR on a MERN web app, while students scan via a Flutter mobile app. Includes automated SMS alerts to parents for absentees.
+        </p>
+        <div class="tech-stack">
+          <span>MERN Stack</span><span>Flutter</span><span>Fast2SMS API</span>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">View Code</button>
+        </div>
+      </div>
+
+      <div class="project-card glass-card">
+        <div class="project-header">
+          <h2>Crypto-Place</h2>
+          <span class="year">June 2025</span>
+        </div>
+        <div class="status-badge completed">✅ Completed</div>
+        <p class="project-desc">
+          Real-time cryptocurrency dashboard using CoinGecko API. Features live market metrics, interactive charts, and dynamic coin details in a responsive React UI.
+        </p>
+        <div class="tech-stack">
+          <span>React.js</span><span>CoinGecko API</span><span>ChartJS</span>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/Rmihika/cryptoplace'">View Code</button>
+        </div>
+      </div>
+
+      <div class="project-card glass-card">
+        <div class="project-header">
+          <h2>Weather-App</h2>
+          <span class="year">July 2025</span>
+        </div>
+        <div class="status-badge completed">✅ Completed</div>
+        <p class="project-desc">
+          Real-time weather dashboard using OpenWeatherMap API. Implemented React Hooks (useState, useEffect) for state management with a gradient visualization UI.
+        </p>
+        <div class="tech-stack">
+          <span>React.js</span><span>OpenWeather API</span><span>Hooks</span>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/Rmihika/Weather-App'">View Code</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="achievements" class="reveal">
+    <p class="section__text__p1">Recognition</p>
+    <h1 class="title">Achievements</h1>
+    
+    <div class="achievements-grid">
+      
+      <div class="achievement-card glass-card">
+        <h3>SIH 2025 Hackathon</h3>
+        <p>Internal Hackathon Participation</p>
+        <button class="btn btn-color-2 achievement-btn" onclick="window.open('./assets/SIH certificate.pdf')">
+          View Certificate
+        </button>
+      </div>
+
+      <div class="achievement-card glass-card">
+        <h3>Data Structures in C</h3>
+        <p>Course Certification</p>
+        <button class="btn btn-color-2 achievement-btn" onclick="window.open('https://www.mygreatlearning.com/certificate/YCFMCBFS')">
+          View Certificate
+        </button>
+      </div>
+
+      <div class="achievement-card glass-card">
+        <h3>Web Dev Internship</h3>
+        <p>Completion Letter (2025)</p>
+        <button class="btn btn-color-2 achievement-btn" onclick="window.open('./assets/internship completion letter.pdf')">
+          View Letter
+        </button>
+      </div>
+
+    </div>
+    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#contact'"/>
+  </section>
+
+  <section id="contact" class="reveal">
+    <p class="section__text__p1">Let's Connect</p>
+    <h1 class="title">Get In Touch</h1>
+    <div class="contact-info-upper-container glass-card">
+      
+      <div class="contact-grid">
+        <div class="contact-item">
+          <img src="./assets/email.png" alt="Email icon" class="icon contact-icon"/>
+          <p><a href="mailto:exampleemail@gmail.com">Email</a></p>
+        </div>
+        
+        <div class="contact-item">
+          <img src="./assets/linkediin.png" alt="LinkedIn icon" class="icon contact-icon"/>
+          <p><a href="https://www.linkedin.com/in/mihika-raut-b9a211315/">LinkedIn</a></p>
+        </div>
+
+        <div class="contact-item">
+          <img src="./assets/github.png" alt="GitHub icon" class="icon contact-icon"/>
+          <p><a href="https://github.com/Rmihika">GitHub</a></p>
+        </div>
+
+        <div class="contact-item">
+          <img src="./assets/instaagram.png" alt="Instagram icon" class="icon contact-icon"/>
+          <p><a href="https://www.instagram.com/__miihiikaa/">Instagram</a></p>
+        </div>
+
+        <div class="contact-item">
+          <img src="./assets/twitter.png" alt="Twitter icon" class="icon contact-icon"/>
+          <p><a href="https://x.com/Miihiikaaaa">Twitter</a></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <nav>
+      <div class="nav-links-container">
+         <ul class="nav-links">
+          <li><a href="#profile">Profile</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#arsenal">Arsenal</a></li>
+          <li><a href="#journey">Journey</a></li>
+          <li><a href="#creations">Creations</a></li>
+          <li><a href="#contact">Connect</a></li>
+        </ul>
+      </div>
+    </nav>
+    <p class="footer-quote">"It works on my machine." ¯\_(ツ)_/¯</p>
+    
+    <p class="copyright">
+      Built with 💜 & Caffeine by <strong>Mihika Raut</strong>. <br>
+      &copy; 2026. No bugs were harmed in the making of this portfolio.
+    </p>
+  </footer>
+
+  <div class="cursor-dot" data-cursor-dot></div>
+  <div class="cursor-outline" data-cursor-outline></div>
     
   <script src="script.js"></script>
 </body>

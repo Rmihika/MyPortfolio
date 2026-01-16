@@ -198,3 +198,63 @@ body, a, button, .icon, .project-btn, .theme-icon { cursor: none; }
 .cursor-dot { width: 6px; height: 6px; background-color: var(--main-color); position: fixed; top: 0; left: 0; transform: translate(-50%, -50%); z-index: 9999; pointer-events: none; border-radius: 2px; }
 .cursor-outline { width: 20px; height: 20px; border: 1px solid var(--main-color); position: fixed; top: 0; left: 0; transform: translate(-50%, -50%); z-index: 9998; pointer-events: none; transition: all 0.1s; border-radius: 4px; }
 .cursor-hover { transform: translate(-50%, -50%) scale(1.4) rotate(45deg) !important; background-color: rgba(108, 99, 255, 0.1); border-color: var(--heading-color); border-radius: 4px; }
+
+/* ========================
+   NAME LOADING SCREEN
+=========================== */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-color); /* Matches your theme background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999; /* Ensures it stays on top */
+  transition: opacity 0.6s ease-out, visibility 0.6s;
+}
+
+.loader-content {
+  text-align: center;
+}
+
+.loader-text {
+  font-family: "Fira Code", monospace; /* Your theme font */
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 10px;
+  animation: fadeText 1.5s ease-in-out infinite alternate;
+}
+
+.loader-bar {
+  width: 0;
+  height: 3px;
+  background-color: var(--main-color); /* Your purple color */
+  border-radius: 2px;
+  margin: 0 auto;
+  animation: loadBar 2s ease-in-out forwards;
+}
+
+/* Animations */
+@keyframes loadBar {
+  0% { width: 0; opacity: 1; }
+  80% { width: 100%; opacity: 1; }
+  100% { width: 100%; opacity: 0; } /* Fades out at the end */
+}
+
+@keyframes fadeText {
+  from { opacity: 0.7; }
+  to { opacity: 1; }
+}
+
+/* Class to hide the loader */
+.loaded {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}

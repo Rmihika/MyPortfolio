@@ -112,3 +112,13 @@ interactiveElements.forEach((el) => {
     cursorOutline.classList.remove("cursor-hover");
   });
 });
+
+/* LOADING SCREEN LOGIC */
+window.addEventListener("load", function () {
+  const preloader = document.getElementById("preloader");
+  
+  // Wait just a tiny bit so the animation finishes nicely
+  setTimeout(() => {
+    preloader.classList.add("loaded");
+  }, 500); // 0.5s delay
+});

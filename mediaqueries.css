@@ -39,4 +39,16 @@
   /* Contact Grid Mobile */
   .contact-grid { gap: 1rem; }
   .contact-item { min-width: 45%; }
+
+  /* --- FIX: FOOTER NAV ON MOBILE --- */
+  footer nav {
+    height: auto;       /* Reset fixed height */
+    position: static;   /* Remove sticky behavior inside footer */
+  }
+  
+  footer .nav-links {
+    flex-wrap: wrap;        /* Allow links to break into new lines */
+    justify-content: center; /* Center the links */
+    gap: 1rem;              /* Reduce gap so they fit better */
+  }
 }

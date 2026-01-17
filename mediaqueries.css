@@ -8,7 +8,12 @@
   
   section { margin: 0 5% 4rem; }
   #profile { display: flex; flex-direction: column; height: fit-content; gap: 2rem; margin-top: 5rem;}
-  .section__pic-container { width: 275px; height: 275px; margin: 0 auto; }
+  
+  .section__pic-container { 
+    width: 260px; 
+    height: 260px; 
+    margin: 0 auto; 
+  }
   .arrow { display: none; }
   
   /* Timeline Adjustment for Tablet */
@@ -18,8 +23,8 @@
   .left::after, .right::after { left: 21px; }
   .right { left: 0; }
 
-  /* Disable Custom Cursor on Mobile/Tablet */
-  .cursor-dot, .cursor-outline { display: none !important; }
+  /* Disable Custom Bracket Cursor on Mobile/Tablet */
+  .cursor-bracket { display: none !important; }
   body, a, button, .icon, .project-btn, .theme-icon { cursor: auto !important; }
 }
 
@@ -40,15 +45,7 @@
   .contact-grid { gap: 1rem; }
   .contact-item { min-width: 45%; }
 
-  /* --- FIX: FOOTER NAV ON MOBILE --- */
-  footer nav {
-    height: auto;       /* Reset fixed height */
-    position: static;   /* Remove sticky behavior inside footer */
-  }
-  
-  footer .nav-links {
-    flex-wrap: wrap;        /* Allow links to break into new lines */
-    justify-content: center; /* Center the links */
-    gap: 1rem;              /* Reduce gap so they fit better */
-  }
+  /* Footer Nav Wrapping */
+  footer nav { height: auto; position: static; }
+  footer .nav-links { flex-wrap: wrap; justify-content: center; gap: 1rem; }
 }

@@ -56,10 +56,11 @@ h1, h2, h3, h4, .title, .logo { color: var(--heading-color); transition: color 0
 
 /* NAV */
 nav { display: flex; justify-content: space-around; align-items: center; height: 12vh; position: sticky; top: 0; z-index: 100; background: var(--nav-bg); backdrop-filter: blur(10px); }
-.nav-links { display: flex; gap: 2rem; list-style: none; font-size: 1.2rem; }
+.nav-links { display: flex; gap: 2rem; list-style: none; font-size: 1.2rem; align-items: center; }
 .nav-links a:hover { color: var(--main-color); }
 .logo { font-size: 2rem; font-weight: 600; cursor: default; }
 .theme-icon { cursor: pointer; height: 1.5rem; filter: var(--icon-filter); }
+.theme-btn-container { display: flex; align-items: center; justify-content: center; height: 100%; }
 
 /* HAMBURGER MENU */
 #hamburger-nav { display: none; }
@@ -77,29 +78,25 @@ nav { display: flex; justify-content: space-around; align-items: center; height:
 section { padding-top: 4vh; min-height: fit-content; margin: 0 10rem 4rem; box-sizing: border-box; }
 
 /* PROFILE SECTION */
-#profile { display: flex; justify-content: center; gap: 5rem; height: 80vh; align-items: center; }
-.section__pic-container { height: 400px; width: 400px; display: flex; }
-
-/* IMAGE FIXES: Centered & Clean */
-.section__pic-container img { 
-  width: 100%; 
-  height: 100%; 
-  object-fit: cover; 
-  object-position: center; 
-  border-radius: 50%; 
-  border: none; 
-  box-shadow: none; 
+#profile { display: flex; justify-content: center; gap: 4rem; height: 80vh; align-items: center; }
+.section__pic-container { 
+  height: 340px; width: 340px; display: flex; margin: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 25px rgba(108, 99, 255, 0.15); 
+  transition: box-shadow 0.3s ease;
 }
+.section__pic-container:hover { box-shadow: 0 0 40px rgba(108, 99, 255, 0.25); }
+.section__pic-container img { width: 100%; height: 100%; object-fit: cover; object-position: center; border-radius: 50%; border: none; }
 
 .section__text { text-align: center; }
 .section__text__p1 { text-align: center; font-weight: 600; }
 .section__text__p2 { font-size: 1.15rem; margin-bottom: 0.5rem; font-family: "Fira Code", monospace; color: var(--main-color); }
 .section__text__interests { font-size: 1rem; margin-bottom: 1rem; color: var(--text-color); font-weight: 500; letter-spacing: 1px; }
 .title { font-size: 3rem; text-align: center; min-height: 4rem; font-family: "Fira Code", monospace; font-weight: 600; }
-.typing-name::after { content: "|"; animation: blink 1s infinite; color: var(--main-color); }
+.typing-name::after { content: "|"; animation: blink 1.3s infinite step-end; color: var(--main-color); }
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
-/* BUTTONS & ICONS */
+/* BUTTONS */
 .btn-container { display: flex; justify-content: center; gap: 1rem; margin-bottom: 1rem; }
 .btn { font-weight: 600; padding: 1rem; width: 8rem; border-radius: 2rem; cursor: pointer; font-family: inherit; transition: 0.3s; }
 .btn-color-1 { background: var(--main-color); color: white; border: 1px solid var(--main-color); }
@@ -107,6 +104,7 @@ section { padding-top: 4vh; min-height: fit-content; margin: 0 10rem 4rem; box-s
 .btn-color-2 { background: none; color: var(--heading-color); border: 1px solid var(--heading-color); }
 .btn-color-2:hover { background: var(--heading-color); color: var(--bg-color); }
 
+/* SOCIALS */
 #socials-container { display: flex; justify-content: center; gap: 1rem; }
 .icon { cursor: pointer; height: 2rem; filter: var(--icon-filter); transition: 0.3s; }
 .icon:hover { transform: scale(1.1); }
@@ -115,23 +113,10 @@ section { padding-top: 4vh; min-height: fit-content; margin: 0 10rem 4rem; box-s
 /* ABOUT SECTION */
 .about-container { display: flex; justify-content: center; align-items: center; padding: 2.5rem; margin: 2rem auto; max-width: 900px; text-align: center; }
 .about-text p { font-size: 1.1rem; margin-bottom: 1rem; line-height: 1.8; opacity: 0.9; color: var(--text-color); }
+.about-stats { display: flex; justify-content: center; margin-top: 2rem; width: 100%; }
+.about-stats img { width: 100%; max-width: 500px; height: auto; filter: drop-shadow(0 0 10px rgba(108, 99, 255, 0.2)); }
 
-/* --- GITHUB STATS IN ABOUT --- */
-.about-stats {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
-  width: 100%;
-}
-
-.about-stats img {
-  width: 100%;
-  max-width: 500px; /* Prevents it from getting too huge */
-  height: auto;
-  filter: drop-shadow(0 0 10px rgba(108, 99, 255, 0.2)); 
-}
-
-/* ARSENAL GRID */
+/* SKILLS GRID */
 .arsenal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; width: 100%; margin-top: 2rem; }
 .arsenal-card { padding: 1.5rem; text-align: center; }
 .arsenal-card h3 { margin-bottom: 1.5rem; font-size: 1.3rem; }
@@ -152,7 +137,7 @@ section { padding-top: 4vh; min-height: fit-content; margin: 0 10rem 4rem; box-s
 .timeline-content h3 { margin-bottom: 5px; }
 .timeline-content h4 { font-size: 0.9rem; opacity: 0.8; margin-bottom: 10px; }
 
-/* CREATIONS GRID */
+/* PROJECTS */
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; width: 100%; margin-top: 2rem; }
 .project-card { padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; height: 100%; }
 .project-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
@@ -167,7 +152,7 @@ section { padding-top: 4vh; min-height: fit-content; margin: 0 10rem 4rem; box-s
 .card-footer { text-align: center; }
 .project-btn { width: 100%; }
 
-/* ACHIEVEMENTS GRID */
+/* ACHIEVEMENTS */
 .achievements-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; width: 100%; margin-top: 2rem; }
 .achievement-card { padding: 1.5rem; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; }
 .achievement-card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
@@ -193,68 +178,59 @@ footer { height: 25vh; margin: 0 1rem; padding-top: 2rem; text-align: center; di
 .reveal { opacity: 0; transform: translateY(30px); transition: all 1s ease; }
 .reveal.active { opacity: 1; transform: translateY(0); }
 
-/* COMPACT CURSOR */
-body, a, button, .icon, .project-btn, .theme-icon { cursor: none; }
-.cursor-dot { width: 6px; height: 6px; background-color: var(--main-color); position: fixed; top: 0; left: 0; transform: translate(-50%, -50%); z-index: 9999; pointer-events: none; border-radius: 2px; }
-.cursor-outline { width: 20px; height: 20px; border: 1px solid var(--main-color); position: fixed; top: 0; left: 0; transform: translate(-50%, -50%); z-index: 9998; pointer-events: none; transition: all 0.1s; border-radius: 4px; }
-.cursor-hover { transform: translate(-50%, -50%) scale(1.4) rotate(45deg) !important; background-color: rgba(108, 99, 255, 0.1); border-color: var(--heading-color); border-radius: 4px; }
+/* ===========================
+   BRACKET CURSOR 
+   =========================== */
+body, a, button, .icon, .project-btn, .theme-icon {
+  cursor: none; /* Hides default cursor */
+}
+
+.cursor-bracket {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 30px; /* Wide Gap initially */
+  transition: gap 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Snap transition */
+  color: var(--text-color);
+  font-family: "Fira Code", monospace;
+  font-weight: bold;
+  font-size: 1.8rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/* HOVER STATE: Snap Together */
+.cursor-hover {
+  gap: 15px; /* Snap tighter */
+  color: var(--main-color);
+  transform: translate(-50%, -50%) scale(1.1);
+}
 
 /* ========================
    NAME LOADING SCREEN
 =========================== */
 #preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--bg-color); /* Matches your theme background */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 99999; /* Ensures it stays on top */
-  transition: opacity 0.6s ease-out, visibility 0.6s;
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background-color: var(--bg-color); display: flex; justify-content: center; align-items: center;
+  z-index: 99999; transition: opacity 0.6s ease-out, visibility 0.6s;
 }
-
-.loader-content {
-  text-align: center;
-}
-
+.loader-content { text-align: center; }
 .loader-text {
-  font-family: "Fira Code", monospace; /* Your theme font */
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--heading-color);
-  letter-spacing: 2px;
-  display: block;
-  margin-bottom: 10px;
+  font-family: "Fira Code", monospace; font-size: 1.5rem; font-weight: 600; color: var(--heading-color);
+  letter-spacing: 2px; display: block; margin-bottom: 10px;
   animation: fadeText 1.5s ease-in-out infinite alternate;
 }
-
 .loader-bar {
-  width: 0;
-  height: 3px;
-  background-color: var(--main-color); /* Your purple color */
-  border-radius: 2px;
-  margin: 0 auto;
+  width: 0; height: 3px; background-color: var(--main-color); border-radius: 2px; margin: 0 auto;
   animation: loadBar 2s ease-in-out forwards;
 }
 
-/* Animations */
 @keyframes loadBar {
-  0% { width: 0; opacity: 1; }
-  80% { width: 100%; opacity: 1; }
-  100% { width: 100%; opacity: 0; } /* Fades out at the end */
+  0% { width: 0; opacity: 1; } 80% { width: 100%; opacity: 1; } 100% { width: 100%; opacity: 0; }
 }
-
-@keyframes fadeText {
-  from { opacity: 0.7; }
-  to { opacity: 1; }
-}
-
-/* Class to hide the loader */
-.loaded {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
+@keyframes fadeText { from { opacity: 0.7; } to { opacity: 1; } }
+.loaded { opacity: 0; visibility: hidden; pointer-events: none; }
